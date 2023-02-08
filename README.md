@@ -4,9 +4,7 @@
 
 ## ## 프로젝트 구조
 
-- API 서버 (java 8) - spring boot 사용
-
-### ### API 서버
+- API 서버 (java 11) - spring boot 사용
 
 ## Controller
 

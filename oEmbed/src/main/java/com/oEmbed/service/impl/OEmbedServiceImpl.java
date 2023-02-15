@@ -50,7 +50,6 @@ public class OEmbedServiceImpl implements OEmbedSerivce{
 			conn.disconnect(); 
 			strResult = result.toString(); 
 			map = mapper.readValue(strResult, Map.class);
-			System.out.println("strResult = " + strResult);
 			return map;
 		} catch ( Exception e ){
 			e.printStackTrace(); 

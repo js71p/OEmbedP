@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.NoSuchElementException;
 
@@ -23,7 +24,7 @@ public class OEmbedServiceImpl implements OEmbedSerivce{
 		StringBuffer result = new StringBuffer(); 
 		String strResult = ""; 
 		ObjectMapper mapper = new ObjectMapper();
-		Map<String, Object> map = new HashMap<String, Object>();
+		Map<String, Object> map = new LinkedHashMap<>();
 		try {  
 			String uri = ChannelType.getChannelTypeName(url);
 			StringBuilder urlBuilder = new StringBuilder(uri); 
@@ -49,6 +50,7 @@ public class OEmbedServiceImpl implements OEmbedSerivce{
 			conn.disconnect(); 
 			strResult = result.toString(); 
 			map = mapper.readValue(strResult, Map.class);
+			System.out.println("strResult = " + strResult);
 			return map;
 		} catch ( Exception e ){
 			e.printStackTrace(); 
